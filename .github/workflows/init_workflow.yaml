@@ -12,8 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint]
     steps:
-      - run: echo build step is running ... 
-  
+      - run: echo build step is running 
+      - name: Compile binary
+        run: |
+          echo "Compiling binary"
+          echo "Binary compiled"
   test:
     runs-on: ubuntu-latest
     needs: [build]
