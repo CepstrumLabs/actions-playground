@@ -12,7 +12,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: binary-${{ github.sha }}
-          path: ./binary-${{ github.sha }}
       - name: Publish artifacts
         run: |
           echo publish step is running for ${{ github.head_ref }}.${{ github.sha }}...
