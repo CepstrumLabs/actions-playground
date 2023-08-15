@@ -1,10 +1,10 @@
-name: Premerge CI
+name: Postmerge CI
 run-name: Linting, building, testing and publishing 🚀
 
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - 'main'
   workflow_dispatch:
 
 jobs:
@@ -27,3 +27,7 @@ jobs:
     needs: [build]
     steps:
       - run: echo test step is running ... 
+
+  call_publish:
+    uses: ./.github/workflows/publish.yaml
+    needs: [lint, build, test]
