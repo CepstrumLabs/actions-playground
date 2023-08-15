@@ -7,4 +7,5 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-      - run: echo publish step is running
+    steps:
+      - run: echo publish step is running for ${{ github.sha }}
