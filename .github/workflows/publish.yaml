@@ -7,4 +7,4 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-      - run: echo "publish step is running for ${{ github.head_ref }}.${{ github.sha }}..." 
+      - run: echo 'publish step is running for ${{ github.head_ref }}.${{ github.sha }}...'
