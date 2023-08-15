@@ -15,4 +15,4 @@ jobs:
       - name: Publish artifacts
         run: |
           echo publish step is running for ${{ github.head_ref }}.${{ github.sha }}...
-          cat ./binary-${{ github.sha }}/binary-${{ github.sha }}
+          cat ./binary-${{ github.sha }}
