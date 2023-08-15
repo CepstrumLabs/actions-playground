@@ -1,5 +1,6 @@
 name: Premerge CI
 run-name: Linting, building, testing and publishing 🚀
+
 on:
   push:
     branches: [ main ]
