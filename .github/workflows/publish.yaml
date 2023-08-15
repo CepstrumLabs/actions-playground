@@ -2,6 +2,7 @@ name: Publish Build Artifacts
 run-name: Publish artifacts 🚀
 on:
   workflow_call:
+  
   workflow_dispatch:
 
 jobs:
