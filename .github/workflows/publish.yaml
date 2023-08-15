@@ -8,4 +8,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - run: echo publish step is running for ${{ github.head_ref }}.${{ github.sha }}...
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: binary-${{ github.sha }}
+          path: ./binary-${{ github.sha }}
+      - name: Publish artifacts
+        run: |
+          echo publish step is running for ${{ github.head_ref }}.${{ github.sha }}...
+          cat ./binary-${{ github.sha }}/binary-${{ github.sha }}
