@@ -3,7 +3,7 @@ run-name: Linting, building, testing and publishing 🚀
 
 on:
   pull_request:
-    branches: [ '*' ]
+    types: [opened, reopened]
   workflow_dispatch:
 
 jobs:
