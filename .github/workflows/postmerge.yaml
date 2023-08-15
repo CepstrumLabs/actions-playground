@@ -1,32 +1,32 @@
-name: Postmerge CI
-run-name: Testing Github actions 🚀
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+# name: Postmerge CI
+# run-name: Testing Github actions 🚀
+# on:
+#   push:
+#     branches: [ main ]
+#   workflow_dispatch:
 
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo lint step is running ... 
+# jobs:
+#   lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo lint step is running ... 
   
-  build:
-    runs-on: ubuntu-latest
-    needs: [lint]
-    steps:
-      - run: echo build step is running 
-      - name: Compile binary
-        run: |
-          echo "Compiling binary"
-          echo "Binary compiled"
-  test:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - run: echo test step is running ... 
+#   build:
+#     runs-on: ubuntu-latest
+#     needs: [lint]
+#     steps:
+#       - run: echo build step is running 
+#       - name: Compile binary
+#         run: |
+#           echo "Compiling binary"
+#           echo "Binary compiled"
+#   test:
+#     runs-on: ubuntu-latest
+#     needs: [build]
+#     steps:
+#       - run: echo test step is running ... 
 
-  # call_publish:
-  #   runs-on: ubuntu-latest
-  #   needs: [lint, build, test]
-  #   uses: ./.github/workflows/publish.yaml
+#   # call_publish:
+#   #   runs-on: ubuntu-latest
+#   #   needs: [lint, build, test]
+#   #   uses: ./.github/workflows/publish.yaml
