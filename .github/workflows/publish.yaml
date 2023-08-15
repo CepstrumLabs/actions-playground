@@ -1,0 +1,10 @@
+name: Reusable Publish workflow
+run-name: Publish artifacts 🚀
+on:
+  workflow_call:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo publish step is running ... 
