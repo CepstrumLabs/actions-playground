@@ -2,7 +2,7 @@ name: Publish Build Artifacts
 run-name: Publish artifacts 🚀
 on:
   workflow_call:
-  
+
   workflow_dispatch:
 
 jobs:
@@ -10,9 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: binary-${{ github.sha }}
+        # uses: actions/download-artifact@v2
+        # with:
+        #   name: binary-${{ github.sha }}
+        run: |
+        curl -L \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        https://api.github.com/repos/CepstrumLabs/actions-playground/actions/artifacts
+        
+
       - name: Publish artifacts
         run: |
           echo publish step is running for ${{ github.head_ref }}.${{ github.sha }}...
