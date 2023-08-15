@@ -2,8 +2,9 @@ name: Premerge CI
 run-name: Linting, building, testing and publishing 🚀
 
 on:
-  pull_request:
-    types: [opened, reopened]
+  push:
+    branches:
+      - '*'
   workflow_dispatch:
 
 jobs:
