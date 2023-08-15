@@ -3,8 +3,6 @@ run-name: Linting, building, testing and publishing 🚀
 
 on:
   push:
-    branches:
-      - '*'
     branches-ignore:
       - main
   workflow_dispatch:
