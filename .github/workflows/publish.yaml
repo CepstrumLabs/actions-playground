@@ -14,10 +14,12 @@ jobs:
         # with:
         #   name: binary-${{ github.sha }}
         run: |
-          curl --request GET \
+          ARCHIVE_URL=$(curl --request GET \
           --url https://api.github.com/repos/CepstrumLabs/actions-playground/actions/artifacts \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'X-GitHub-Api-Version: 2022-11-28'
+          --header "Accept: application/vnd.github+json" \
+          --header 'X-GitHub-Api-Version: 2022-11-28' |  jq '.artifacts[] | select(.name == "binary-${{ github.sha }}") | {archive_download_url}')
+          
 
       - name: Publish artifacts
         run: |
